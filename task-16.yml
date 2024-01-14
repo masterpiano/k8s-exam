@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: multi-pod
+  name: multi-pod
+spec:
+  containers:
+  - image: nginx
+    name: alpha
+    env:
+      - name: NAME
+        value: alpha
+    resources: {}
+  - image: busybox
+    name: beta
+    command: ["sleep"]
+    args: ["4800"]
+    env:
+      - name: NAME
+        value: beta    
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
