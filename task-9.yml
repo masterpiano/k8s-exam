@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: finance-tony
+spec: {}
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: finance-tony
+  creationTimestamp: null
+  labels:
+    run: temp-bus
+  name: temp-bus
+spec:
+  containers:
+  - image: redis:alpine
+    name: temp-bus
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
