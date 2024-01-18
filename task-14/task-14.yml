@@ -12,7 +12,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: nginx-resolver
+    name: nginx-resolver
   type: ClusterIP
 status:
   loadBalancer: {}
@@ -32,4 +32,23 @@ spec:
       - containerPort: 80
   dnsPolicy: ClusterFirst
   restartPolicy: Always
-
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: my-busybox
+  name: my-busybox
+spec:
+  containers:
+  - args:
+    - '-'
+    image: busybox:1.28
+    name: busybox
+    command: ["sleep"]
+    args: ["3600"]    
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

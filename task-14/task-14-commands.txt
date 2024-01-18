@@ -1,0 +1,8 @@
+# Get pods IP
+kubectl get pod nginx-resolver -o wide
+
+# Lookup nginx-resolver pod
+kubectl exec my-busybox -it -- nslookup 10-42-0-28.default.pod > nginx-tony.pod
+
+# Lookup nginx-resolver-service
+kubectl exec my-busybox -it -- nslookup nginx-resolver-service > nginx-tony.svc
