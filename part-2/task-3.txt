@@ -1,0 +1,10 @@
+# Command to output
+kubectl get pods --show-labels --sort-by=.metadata.name > task-3.txt
+
+# Result
+NAME                          READY   STATUS    RESTARTS   AGE     LABELS
+nginx-dev-5cf77c8694-7zn77    1/1     Running   0          9m19s   env=dev,pod-template-hash=5cf77c8694
+nginx-dev-5cf77c8694-788d7    1/1     Running   0          9m19s   env=dev,pod-template-hash=5cf77c8694
+nginx-dev-5cf77c8694-m74qt    1/1     Running   0          9m19s   env=dev,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-nwqt8   1/1     Running   0          9m19s   env=prod,pod-template-hash=86dd8b565b
+nginx-prod-86dd8b565b-p856t   1/1     Running   0          9m19s   env=prod,pod-template-hash=86dd8b565b
