@@ -1,5 +1,5 @@
 # Command to output
-kubectl get pods --show-labels --sort-by=.metadata.name > task-3.txt
+kubectl get pods --show-labels --sort-by=.metadata.name
 
 # Result
 NAME                          READY   STATUS    RESTARTS   AGE     LABELS
