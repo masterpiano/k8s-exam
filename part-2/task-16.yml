@@ -3,14 +3,12 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: nginx-specific-node
-  name: nginx-specific-node
+    run: nginx
+  name: nginx
 spec:
-  nodeSelector:
-    nodeName: nginxnode
   containers:
   - image: nginx
-    name: nginx-specific-node
+    name: nginx
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
