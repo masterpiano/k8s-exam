@@ -1,1 +1,1 @@
-kubectl create configmap keyvalcfgmap --from-file=./config.txt
+kubectl create configmap keyvalcfgmap --from-env-file=./config.txt
