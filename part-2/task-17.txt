@@ -1,0 +1,6 @@
+# Command
+kubectl get pods -o wide
+
+# Result
+NAME    READY   STATUS    RESTARTS   AGE    IP          NODE           NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          107s   10.42.2.4   k3d-worker-0   <none>           <none>
