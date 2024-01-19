@@ -4,8 +4,11 @@ metadata:
   creationTimestamp: null
   labels:
     run: nginx
+    nodeName: nginxnode
   name: nginx
 spec:
+  nodeSelector:
+    nodeName: nginxnode
   containers:
   - image: nginx
     name: nginx
