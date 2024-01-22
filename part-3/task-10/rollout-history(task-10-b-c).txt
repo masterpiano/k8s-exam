@@ -1,0 +1,17 @@
+# Command
+kubectl rollout history deploy webapp --revision=4
+
+# Result
+deployment.apps/webapp with revision #4
+Pod Template:
+  Labels:	app=webapp
+	pod-template-hash=5b59bd94c7
+  Containers:
+   nginx:
+    Image:	nginx:1.100
+    Port:	80/TCP
+    Host Port:	0/TCP
+    Environment:	<none>
+    Mounts:	<none>
+  Volumes:	<none>
+

@@ -1,0 +1,13 @@
+deployment.apps/webapp with revision #6
+Pod Template:
+  Labels:	app=webapp
+	pod-template-hash=b644d4b48
+  Containers:
+   nginx:
+    Image:	nginx:latest
+    Port:	80/TCP
+    Host Port:	0/TCP
+    Environment:	<none>
+    Mounts:	<none>
+  Volumes:	<none>
+
