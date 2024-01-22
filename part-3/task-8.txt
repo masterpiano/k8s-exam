@@ -1,0 +1,5 @@
+# Command
+kubectl rollout status deployment/webapp
+
+# Result
+deployment "webapp" successfully rolled out
