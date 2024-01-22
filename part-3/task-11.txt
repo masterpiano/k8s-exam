@@ -1,0 +1,19 @@
+# Command
+kubectl autoscale deployment webapp --cpu-percent=85 --min=10 --max=20
+
+# Get pods before
+NAME                      READY   STATUS    RESTARTS   AGE
+webapp-665c6949b7-wbg8h   1/1     Running   0          75s
+
+# Get pods after
+NAME                      READY   STATUS    RESTARTS   AGE
+webapp-665c6949b7-wbg8h   1/1     Running   0          87s
+webapp-665c6949b7-ccnbs   1/1     Running   0          10s
+webapp-665c6949b7-zknjw   1/1     Running   0          10s
+webapp-665c6949b7-p6cl8   1/1     Running   0          10s
+webapp-665c6949b7-7qgmw   1/1     Running   0          10s
+webapp-665c6949b7-k4947   1/1     Running   0          10s
+webapp-665c6949b7-bc5sh   1/1     Running   0          10s
+webapp-665c6949b7-lkm98   1/1     Running   0          10s
+webapp-665c6949b7-gr2jx   1/1     Running   0          10s
+webapp-665c6949b7-hz49w   1/1     Running   0          10s
