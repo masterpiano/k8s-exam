@@ -1,0 +1,16 @@
+# Task 17
+# Command
+kubectl get pods -o wide
+
+# Result
+NAME    READY   STATUS    RESTARTS   AGE    IP          NODE           NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          107s   10.42.2.5   k3d-worker-0   <none>           <none>
+
+
+# Task 18
+# Command
+kubectl get pods nginx --show-labels
+
+# Result
+NAME    READY   STATUS    RESTARTS   AGE     LABELS
+nginx   1/1     Running   0          3m49s   nodeName=nginxnode,run=nginx

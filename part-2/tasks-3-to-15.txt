@@ -1,0 +1,69 @@
+# Task 3
+kubectl get pods --show-labels --sort-by=.metadata.name
+
+# Task 4
+kubectl get pods -l env=dev
+
+# Task 5
+kubectl get pods -l env=dev --show-labels
+
+# Task 6
+kubectl get pods -l env=prod
+
+# Task 7
+kubectl get pods -l env=prod --show-labels
+
+# Task 8
+kubectl get pods -l env
+
+
+# Task 9
+kubectl get pods -l env=dev,env=prod
+
+
+# Task 10
+kubectl get pods -l env=dev,env=prod --show-labels
+
+
+# Task 11
+# Command
+kubectl label pod nginx-prod-86dd8b565b-nwqt8 --overwrite env=uat
+
+# Result
+NAME                          READY   STATUS    RESTARTS   AGE    LABELS
+nginx-dev-5cf77c8694-m74qt    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
+nginx-dev-5cf77c8694-788d7    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-p856t   1/1     Running   0          34m    env=prod,pod-template-hash=86dd8b565b
+nginx-dev-5cf77c8694-7zn77    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
+nginx-stand-alone             1/1     Running   0          15m    run=nginx-stand-alone
+nginx-prod-86dd8b565b-nwqt8   1/1     Running   0          34m    env=uat,pod-template-hash=86dd8b565b
+nginx-prod-86dd8b565b-ktvx4   1/1     Running   0          110s   env=prod,pod-template-hash=86dd8b565b
+
+# Task 12
+kubectl label pods -l env env-
+
+# Task 13
+# Command
+kubectl label pods --all app=nginx
+
+# Result
+NAME                          READY   STATUS    RESTARTS      AGE     LABELS
+nginx-stand-alone             1/1     Running   2 (11m ago)   3h55m   app=nginx,run=nginx-stand-alone
+nginx-dev-5cf77c8694-7zn77    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-p856t   1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=86dd8b565b
+nginx-prod-86dd8b565b-nwqt8   1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=86dd8b565b
+nginx-dev-5cf77c8694-788d7    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
+nginx-dev-5cf77c8694-m74qt    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-ktvx4   1/1     Running   2 (11m ago)   3h41m   app=nginx,pod-template-hash=86dd8b565b
+nginx-dev-5cf77c8694-pxwgs    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
+nginx-dev-5cf77c8694-kbjsk    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-zxsxc   1/1     Running   0             8m5s    app=nginx,env=prod,pod-template-hash=86dd8b565b
+nginx-dev-5cf77c8694-tmhp5    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
+nginx-prod-86dd8b565b-lwrmm   1/1     Running   0             8m5s    app=nginx,env=prod,pod-template-hash=86dd8b565b
+
+# Task 14
+kubectl get nodes -A --show-labels
+
+
+# Task 15
+kubectl label node k3d-worker-0 nodeName=nginxnode
