@@ -1,6 +1,0 @@
-# Command
-kubectl get pods nginx --show-labels
-
-# Result
-NAME    READY   STATUS    RESTARTS   AGE     LABELS
-nginx   1/1     Running   0          3m49s   nodeName=nginxnode,run=nginx
