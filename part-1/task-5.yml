@@ -1,0 +1,1 @@
+kubectl expose -f task-2.yml --port=6379 --name=messaging-service --type=ClusterIP --labels="tier=msg"
