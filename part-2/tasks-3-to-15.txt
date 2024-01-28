@@ -27,17 +27,15 @@ kubectl get pods -l env=dev,env=prod --show-labels
 
 # Task 11
 # Command
-kubectl label pod nginx-prod-86dd8b565b-nwqt8 --overwrite env=uat
+kubectl label pod nginx-prod-1 --overwrite env=uat
 
 # Result
-NAME                          READY   STATUS    RESTARTS   AGE    LABELS
-nginx-dev-5cf77c8694-m74qt    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
-nginx-dev-5cf77c8694-788d7    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
-nginx-prod-86dd8b565b-p856t   1/1     Running   0          34m    env=prod,pod-template-hash=86dd8b565b
-nginx-dev-5cf77c8694-7zn77    1/1     Running   0          34m    env=dev,pod-template-hash=5cf77c8694
-nginx-stand-alone             1/1     Running   0          15m    run=nginx-stand-alone
-nginx-prod-86dd8b565b-nwqt8   1/1     Running   0          34m    env=uat,pod-template-hash=86dd8b565b
-nginx-prod-86dd8b565b-ktvx4   1/1     Running   0          110s   env=prod,pod-template-hash=86dd8b565b
+NAME           READY   STATUS    RESTARTS   AGE    LABELS
+nginx-dev-2    1/1     Running   0          105s   env=dev
+nginx-dev-1    1/1     Running   0          105s   env=dev
+nginx-prod-2   1/1     Running   0          105s   env=prod
+nginx-dev-3    1/1     Running   0          105s   env=dev
+nginx-prod-1   1/1     Running   0          105s   env=uat
 
 # Task 12
 kubectl label pods -l env env-
@@ -47,19 +45,13 @@ kubectl label pods -l env env-
 kubectl label pods --all app=nginx
 
 # Result
-NAME                          READY   STATUS    RESTARTS      AGE     LABELS
-nginx-stand-alone             1/1     Running   2 (11m ago)   3h55m   app=nginx,run=nginx-stand-alone
-nginx-dev-5cf77c8694-7zn77    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
-nginx-prod-86dd8b565b-p856t   1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=86dd8b565b
-nginx-prod-86dd8b565b-nwqt8   1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=86dd8b565b
-nginx-dev-5cf77c8694-788d7    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
-nginx-dev-5cf77c8694-m74qt    1/1     Running   2 (11m ago)   4h13m   app=nginx,pod-template-hash=5cf77c8694
-nginx-prod-86dd8b565b-ktvx4   1/1     Running   2 (11m ago)   3h41m   app=nginx,pod-template-hash=86dd8b565b
-nginx-dev-5cf77c8694-pxwgs    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
-nginx-dev-5cf77c8694-kbjsk    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
-nginx-prod-86dd8b565b-zxsxc   1/1     Running   0             8m5s    app=nginx,env=prod,pod-template-hash=86dd8b565b
-nginx-dev-5cf77c8694-tmhp5    1/1     Running   0             8m5s    app=nginx,env=dev,pod-template-hash=5cf77c8694
-nginx-prod-86dd8b565b-lwrmm   1/1     Running   0             8m5s    app=nginx,env=prod,pod-template-hash=86dd8b565b
+NAME           READY   STATUS    RESTARTS   AGE     LABELS
+nginx-dev-2    1/1     Running   0          3m17s   app=nginx
+nginx-dev-1    1/1     Running   0          3m17s   app=nginx
+nginx-prod-2   1/1     Running   0          3m17s   app=nginx
+nginx-dev-3    1/1     Running   0          3m17s   app=nginx
+nginx-prod-1   1/1     Running   0          3m17s   app=nginx
+
 
 # Task 14
 kubectl get nodes -A --show-labels

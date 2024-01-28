@@ -1,41 +1,79 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: nginx-dev
+  creationTimestamp: null
   labels:
     env: dev
+  name: nginx-dev-1
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      env: dev
-  template:
-    metadata:
-      labels:
-        env: dev
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        resources: {}
+  containers:
+  - image: nginx
+    name: nginx-dev-1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: nginx-prod
+  creationTimestamp: null
+  labels:
+    env: dev
+  name: nginx-dev-2
+spec:
+  containers:
+  - image: nginx
+    name: nginx-dev-2
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: dev
+  name: nginx-dev-3
+spec:
+  containers:
+  - image: nginx
+    name: nginx-dev-3
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
   labels:
     env: prod
+  name: nginx-prod-1
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      env: prod
-  template:
-    metadata:
-      labels:
-        env: prod
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        resources: {}
+  containers:
+  - image: nginx
+    name: nginx-prod-1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: prod
+  name: nginx-prod-2
+spec:
+  containers:
+  - image: nginx
+    name: nginx-prod-2
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
